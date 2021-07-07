@@ -4,10 +4,12 @@
 use super::*;
 use rand::prelude::*;
 
+
+
 #[test]
 fn selection_sort() {
     let mut rng = thread_rng();
-    let mut sorted= (1..120).collect::<Vec<u8>>();
+    let mut sorted= (0..120).collect::<Vec<u8>>();
     
     let mut unsorted= sorted.clone();
     unsorted.shuffle(&mut rng);
@@ -29,4 +31,19 @@ fn bubble_sort() {
     Bubble::sort(&mut unsorted);
     assert_eq!(unsorted, sorted);
 }
+
+
+#[test]
+fn merge_sort() {
+    let mut rng = thread_rng();
+    let mut sorted= (1..120).collect::<Vec<u8>>();
+    
+    let mut unsorted= sorted.clone();
+    unsorted.shuffle(&mut rng);
+
+    // println!("Unsorted slice {:?}", unsorted);
+    Merge::sort(&mut unsorted);
+    assert_eq!(unsorted, sorted);
+}
+
 

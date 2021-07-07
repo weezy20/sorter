@@ -8,9 +8,12 @@
 mod test;
 mod selection;
 mod bubble;
+mod merge;
 
 pub use selection::Selection as Selection;
 pub use bubble::Bubble as Bubble;
+pub use merge::Merge as Merge;
+
 /// Shepmaster : if you pass in a f64 slice with NaN in it, how will you sort it?
 /// That's an interesting thought. Consider the crate ordered_float if you're
 /// feeling too ambitious. For now we stick with Ord and Eq types.
